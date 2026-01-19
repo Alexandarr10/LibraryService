@@ -1,8 +1,8 @@
-﻿using LibraryService.Application.Interfaces.Repositories;
-using LibraryService.Application.Services;
-using LibraryService.Domain.Models;
+﻿using LibraryService.BL.Interfaces.Repositories;
+using LibraryService.BL.Services;
+using LibraryService.Models.Models;
+using Microsoft.Ajax.Utilities;
 using Moq;
-using Xunit;
 
 namespace LibraryService.Tests.Services;
 
@@ -26,7 +26,7 @@ public class BorrowingServiceTests
     public async Task BorrowBookAsync_ShouldBorrowBook_WhenBookAndMemberExist()
     {
         var book = new Book { Id = "book1", IsBorrowed = false };
-        var member = new Member { Id = "member1" };
+        var member = new Models.Models.Member { Id = "member1" };
 
         _bookRepositoryMock.Setup(r => r.GetByIdAsync("book1"))
             .ReturnsAsync(book);
@@ -44,7 +44,7 @@ public class BorrowingServiceTests
     public async Task BorrowBookAsync_ShouldThrow_WhenBookAlreadyBorrowed()
     {
         var book = new Book { Id = "book1", IsBorrowed = true };
-        var member = new Member { Id = "member1" };
+        var member = new Models.Models.Member { Id = "member1" };
 
         _bookRepositoryMock.Setup(r => r.GetByIdAsync("book1"))
             .ReturnsAsync(book);
