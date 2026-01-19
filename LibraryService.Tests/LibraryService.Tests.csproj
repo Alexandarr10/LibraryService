@@ -19,7 +19,6 @@
     <ProjectReference Include="..\LibraryService.Application\LibraryService.Application.csproj" />
     <ProjectReference Include="..\LibraryService.Domain\LibraryService.Domain.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <Using Include="Xunit" />
   </ItemGroup>
