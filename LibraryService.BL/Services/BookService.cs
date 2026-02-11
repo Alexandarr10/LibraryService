@@ -29,4 +29,10 @@ public class BookService : IBookService
 
     public async Task<List<Book>> GetAllAsync()
         => await _bookRepository.GetAllAsync();
+
+    public async Task DeleteAsync(string id)
+    {
+        await _bookRepository.DeleteAsync(id);
+    }
+
 }

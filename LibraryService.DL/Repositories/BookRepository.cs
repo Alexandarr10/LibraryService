@@ -30,4 +30,9 @@ public class BookRepository : IBookRepository
 
     public async Task UpdateAsync(Book book)
         => await _books.ReplaceOneAsync(b => b.Id == book.Id, book);
+
+    public Task DeleteAsync(string id)
+    {
+        throw new NotImplementedException();
+    }
 }

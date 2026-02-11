@@ -9,4 +9,6 @@ public interface IBookService
 {
     Task AddAsync(AddBookRequest request);
     Task<List<Book>> GetAllAsync();
+    Task DeleteAsync(string id);
+
 }
